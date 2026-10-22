@@ -59,6 +59,10 @@ async function createNote(note) {
   });
 }
 
+// DELETE: remove a note
+async function deleteNoteById(id) {
+  return request(`${API_URL}/${id}`, { method: "DELETE" });
+}
 
 // ---------- Rendering (user text is inserted with textContent only) ----------
 function createNoteElement(note) {
