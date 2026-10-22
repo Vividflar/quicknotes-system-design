@@ -50,6 +50,16 @@ async function getNotes() {
   return data;
 }
 
+// POST: create a note
+async function createNote(note) {
+  return request(API_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(note),
+  });
+}
+
+
 // ---------- Rendering (user text is inserted with textContent only) ----------
 function createNoteElement(note) {
   const li = document.createElement("li");
